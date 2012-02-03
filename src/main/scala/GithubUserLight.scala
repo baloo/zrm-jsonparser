@@ -11,7 +11,7 @@ import play.api.libs.json.{Json,
                            Format}
 
 object UserLight {
-  implicit object UserLightFormat extends Writes[User] {
+  object UserLightFormat extends Writes[User] {
     def writes(user: User): JsValue = JsObject(List(
       "login" -> JsString(user.login),
       "id" -> JsNumber(user.id)
